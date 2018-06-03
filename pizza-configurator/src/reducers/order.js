@@ -5,7 +5,7 @@ import { DELIVERY_OPTION } from '../actions/delivery'
 import { CALCULATE_PRICE } from '../actions/price'
 
 const initialState = {
-  base: null,
+        base: null,
         topping: [],
         sauce: null,
         totalPrice: 0,

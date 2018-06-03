@@ -6,18 +6,18 @@ export const baseList = [
 ]
 
 export const deliveryChoice = [
-    {id: 1, name: 'Turbo drone delivery!!!(+10%)', percentage: 1.1},
-    {id: 2, name: 'The old fashioned way', percentage: 1},
+    {id: 1, name: 'Turbo drone delivery!!!(+10%)'},
+    {id: 2, name: 'The old fashioned way'},
   ]
 
-export const sauceProducts = [
+export const sauceChoices = [
     {id: 1, name: 'White sauce', price: 0.00},
     {id: 2, name: 'Red sauce', price: 0.00},
     {id: 3, name: 'Double red sauce', price: 1.00},
     {id: 4, name: 'Mix it up', price: 1.50}
 ]
 
-export const toppingProducts = [
+export const toppingChoices = [
     {id: 1, name: 'Pineapple', price: 0.50},
     {id: 2, name: 'Corn', price: 0.50},
     {id: 3, name: 'Olives (green)', price: 0.50},

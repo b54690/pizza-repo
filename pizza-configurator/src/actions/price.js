@@ -1,6 +1,6 @@
 export const CALCULATE_PRICE = 'CALCULATE_PRICE'
 
-export const calculatePrice = () => (dispatch, getState) => {
+export const calculatePrice = (totalPrice) => (dispatch, getState) => {
     const state = getState()
     let totalPrice = 0
 

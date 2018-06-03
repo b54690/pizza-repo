@@ -5,46 +5,37 @@ import ToppingList from './ToppingList'
 import TotalPrice from './TotalPrice'
 import DeliveryChoice from './DeliveryChoice'
 import { withStyles } from 'material-ui/styles'
-import GridList from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
 
 
 const styles = theme => ({
-  paper: {
-    padding: 1,
-  }
+  root: theme.mixins.gutters({
+    paddingTop: 1,
+    paddingBottom: 1,
+    marginTop: theme.spacing.unit * 1,
+})
 })
 
 class OrderContainer extends Component {
   render() {
     return (
       <form>
-          <GridList>
-            <Paper className={this.props.classes.paper}>
+            <Paper className={this.props.classes.root}>
               <TotalPrice />
             </Paper>
-          </GridList>
         <div>
-          <GridList>
-              <Paper className={this.props.classes.paper}>
+              <Paper className={this.props.classes.root}>
                 <BaseMenu />
               </Paper>
-            <GridList>
-              <Paper className={this.props.classes.paper}>
+              <Paper className={this.props.classes.root}>
                 <SauceList />
               </Paper>
-            </GridList>
-            <GridList>
-              <Paper className={this.props.classes.paper}>
+              <Paper className={this.props.classes.root}>
                 <ToppingList />
               </Paper>
-            </GridList>
-            <GridList>
-              <Paper className={this.props.classes.paper}>
+              <Paper className={this.props.classes.root}>
                 <DeliveryChoice />
               </Paper>
-            </GridList>
-            </GridList>
         </div>
       </form>
     )

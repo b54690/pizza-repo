@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { toppingProducts } from '../library'
+import { toppingChoices } from '../library'
 import { addTopping } from '../actions/topping'
+
 
 class ToppingList extends Component {
   render() {
@@ -9,10 +10,11 @@ class ToppingList extends Component {
       <div>
         <h1>Select your toppings (max. 3):</h1>
         {
-          toppingProducts.map((toppingProduct) => {
-            return <p key={toppingProduct.id}>
-              <label>{toppingProduct.name} &euro; {toppingProduct.price.toFixed(2)}
-                <input type="checkbox" name="topping" onChange={(event) => this.props.addTopping(toppingProduct, event)}/>
+          toppingChoices.map((toppingChoice) => {
+            const maxTopping = this.props.topping.length >= 3
+            return <p key={toppingChoice.id}>
+              <label>{toppingChoice.name} &euro; {toppingChoice.price.toFixed(2)}
+                <input type="checkbox" name="topping" onChange={(event) => this.props.addTopping(toppingChoice, event)} disabled={maxTopping}/>
               </label>
             </p>
           })
@@ -21,6 +23,10 @@ class ToppingList extends Component {
     )
   }
 }
+const mapStateToProps = (state, props) => ({
+  topping: state.order.topping
+})
+
+export default connect(mapStateToProps, { addTopping })(ToppingList)
 
 
-export default connect(null, { addTopping })(ToppingList)

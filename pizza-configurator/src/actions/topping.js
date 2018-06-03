@@ -5,7 +5,7 @@ export const ADD_TOPPING = 'ADD_TOPPING'
 export const addTopping = (pizza, event) => (dispatch) => {
     const checkboxChecked = event.target.checked
 
-    if(checkboxChecked === true) {
+    if(checkboxChecked) {
         dispatch({ type: ADD_TOPPING, payload: pizza })
         dispatch(calculatePrice())
     }
